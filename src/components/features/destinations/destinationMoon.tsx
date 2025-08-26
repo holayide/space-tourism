@@ -1,8 +1,10 @@
 export default function DestinationMoon() {
   return (
-    <div>
-      <h1 className="text-8xl text-white font-bellefair uppercase">Moon</h1>
-      <p className="mt-4 text-lg font-barlow leading-[180%]">
+    <div className="text-center lg:text-start">
+      <h1 className="text-[80px] lg:text-8xl text-white font-bellefair uppercase">
+        Moon
+      </h1>
+      <p className="mt-4 text-base lg:text-lg font-barlow leading-[180%]">
         See our planet as you’ve never seen it before. A perfect relaxing trip
         away to help regain perspective and come back refreshed. While you’re
         there, take in some history by visiting the Luna 2 and Apollo 11 landing
