@@ -15,6 +15,18 @@
   border-right: 3px solid white;
   border-bottom: none;
 }
+.planet-list > .active {
+  border-bottom: 3px solid white;
+  border-right: none;
+}
+.crew-list > .active {
+  border-bottom: none;
+  border-right: none;
+}
+.crew-list > .active > span {
+  background-color: var(--color-white);
+}
+
 @media (min-width: 768px) {
   .active {
     border-bottom: 3px solid white;
@@ -54,6 +66,20 @@
     min-height: calc(100vh - 232px);
   }
 }
+
+/* .hero-container {
+  height: calc(100dvh - 136px);
+}
+@media (min-width: 768px) {
+  .hero-wrapper {
+    height: calc(100vh - 176px);
+  }
+}
+@media (min-width: 1024px) {
+  .hero-wrapper {
+    height: calc(100vh - 232px);
+  }
+} */
 
 @layer base {
   /* * {

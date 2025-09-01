@@ -1,27 +1,18 @@
+import { useSpaceData } from "@/hooks/useSpaceData";
+import Planet from "./planet";
+
 export default function DestinationTitan() {
-  return <div>destinationTitan</div>;
+  const { getDestination, loading, error } = useSpaceData();
+
+  if (loading)
+    return <div className="loading">Loading space destinations...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
+
+  const { name, distance, travel, description } = getDestination("Titan")!;
+
+  return (
+    <Planet name={name} distance={distance} time={travel}>
+      {description}
+    </Planet>
+  );
 }
-
-// 00 Home
-// 01 Destination
-// 02 Crew
-// 03 Technology
-
-// 01 Pick your destination
-
-// Moon
-// Mars
-// Europa
-// Titan
-
-// Titan
-
-// The only moon known to have a dense atmosphere other than Earth, Titan
-// is a home away from home (just a few hundred degrees colder!). As a
-// bonus, you get striking views of the Rings of Saturn.
-
-// Avg. distance
-// 1.6 bil. km
-
-// Est. travel time
-// 7 years

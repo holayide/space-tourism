@@ -1,17 +1,18 @@
-export default function crewEngineer() {
-  return <div>crewEngineer</div>;
+import { useSpaceData } from "@/hooks/useSpaceData";
+import Profile from "./profile";
+
+export default function CrewEngineer() {
+  const { getCrewMember, loading, error } = useSpaceData();
+
+  if (loading)
+    return <div className="loading">Loading space destinations...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
+
+  const { name, role, bio } = getCrewMember("Flight Engineer")!;
+
+  return (
+    <Profile name={name} title={role}>
+      {bio}
+    </Profile>
+  );
 }
-
-// 00 Home
-// 01 Destination
-// 02 Crew
-// 03 Technology
-
-// 02 Meet your crew
-
-// Flight Engineer
-// Anousheh Ansari
-
-// Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems.
-// Ansari was the fourth self-funded space tourist, the first self-funded woman to
-// fly to the ISS, and the first Iranian in space.

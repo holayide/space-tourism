@@ -1,8 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-import { destinationNav } from "@/components/features/destinations/data";
-import moon from "@/assets/destination/image-moon.webp";
+import { destinationNav } from "@/components/features/data";
+
 import Header from "@/components/features/header";
+import PlanetImages from "@/components/features/destinations/planet-img";
 
 export default function Destination() {
   return (
@@ -18,18 +19,15 @@ export default function Destination() {
             </h3>
 
             <div className="flex-1 flex flex-col lg:flex-row items-center gap-8">
-              <div className="h-full w-full lg:w-1/2 flex justify-center border border-red-500">
-                <div className="md:size-[300px] lg:size-[480px] flex items-center justify-center">
-                  <img src={moon} alt="moon" className="size-full" />
-                </div>
+              <div className="h-full w-full lg:w-1/2 flex justify-center">
+                <PlanetImages />
               </div>
 
-              <div className="h-full w-full lg:w-1/2 border border-green-500">
-                {/* max-w-[514px] lg:max-w-auto lg:mx-[47px] */}
-                <div className="max-w-[514px] lg:max-w-[445px] w-full mx-auto  border border-blue-500">
+              <div className="h-full w-full lg:w-1/2">
+                <div className="max-w-[514px] lg:max-w-[445px] w-full mx-auto">
                   <ul className="flex gap-8 mb-10 justify-center lg:justify-start">
                     {destinationNav.map((link) => (
-                      <li>
+                      <li className="planet-list" key={link.path}>
                         <NavLink
                           key={link.path}
                           to={link.path}

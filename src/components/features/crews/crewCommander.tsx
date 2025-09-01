@@ -1,16 +1,18 @@
+import { useSpaceData } from "@/hooks/useSpaceData";
+import Profile from "./profile";
+
 export default function CrewCommander() {
-  return <div>crewCommander</div>;
+  const { getCrewMember, loading, error } = useSpaceData();
+
+  if (loading)
+    return <div className="loading">Loading space destinations...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
+
+  const { name, role, bio } = getCrewMember("Commander")!;
+
+  return (
+    <Profile name={name} title={role}>
+      {bio}
+    </Profile>
+  );
 }
-//  00 Home
-//   01 Destination
-//   02 Crew
-//   03 Technology
-
-//   02 Meet your crew
-
-//   Commander
-//   Douglas Hurley
-
-//   Douglas Gerald Hurley is an American engineer, former Marine Corps pilot
-//   and former NASA astronaut. He launched into space for the third time as
-//   commander of Crew Dragon Demo-2.

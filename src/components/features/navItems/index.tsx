@@ -8,7 +8,7 @@ export default function NavItem() {
         <li key={link.href} className="w-full md:w-auto">
           <NavLink
             to={link.href}
-            className="flex md:py-8 border-b-[3px] border-transparent hover:border-white transition-all ease-out tracking-widest"
+            className="flex md:py-8 border-b-[3px] border-transparent hover:border-white sm:hover:border-transparent transition-all ease-out tracking-widest"
           >
             <span className="mr-3 font-bold">{link.id}</span>
             {link.name}

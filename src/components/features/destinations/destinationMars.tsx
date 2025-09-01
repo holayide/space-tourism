@@ -1,27 +1,18 @@
+import { useSpaceData } from "@/hooks/useSpaceData";
+import Planet from "./planet";
+
 export default function DestinationMars() {
-  return <div>destinationMars</div>;
+  const { getDestination, loading, error } = useSpaceData();
+
+  if (loading)
+    return <div className="loading">Loading space destinations...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
+
+  const { name, distance, travel, description } = getDestination("Mars")!;
+
+  return (
+    <Planet name={name} distance={distance} time={travel}>
+      {description}
+    </Planet>
+  );
 }
-
-// 00 Home
-// 01 Destination
-// 02 Crew
-// 03 Technology
-
-// 01 Pick your destination
-
-// Moon
-// Mars
-// Europa
-// Titan
-
-// Mars
-
-// Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons,
-// the tallest planetary mountain in our solar system. It’s two and a half times
-// the size of Everest!
-
-// Avg. distance
-// 225 mil. km
-
-// Est. travel time
-// 9 months

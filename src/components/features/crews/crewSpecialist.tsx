@@ -1,17 +1,18 @@
+import { useSpaceData } from "@/hooks/useSpaceData";
+import Profile from "./profile";
+
 export default function CrewSpecialist() {
-  return <div>CrewSpecialist</div>;
+  const { getCrewMember, loading, error } = useSpaceData();
+
+  if (loading)
+    return <div className="loading">Loading space destinations...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
+
+  const { name, role, bio } = getCrewMember("Mission Specialist")!;
+
+  return (
+    <Profile name={name} title={role}>
+      {bio}
+    </Profile>
+  );
 }
-
-// 00 Home
-// 01 Destination
-// 02 Crew
-// 03 Technology
-
-// 02 Meet your crew
-
-// Mission Specialist
-// Mark Shuttleworth
-
-// Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind
-// the Linux-based Ubuntu operating system. Shuttleworth became the first South
-// African to travel to space as a space tourist.

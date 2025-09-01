@@ -4,3 +4,10 @@ export const destinationNav = [
   { path: "europa", name: "Europa" },
   { path: "titan", name: "Titan" },
 ];
+
+export const profileNav = [
+  { path: "commander" },
+  { path: "mission-specialist" },
+  { path: "pilot" },
+  { path: "flight-engineer" },
+];
