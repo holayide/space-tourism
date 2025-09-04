@@ -11,3 +11,9 @@ export const profileNav = [
   { path: "pilot" },
   { path: "flight-engineer" },
 ];
+
+export const technologyNav = [
+  { path: "launch-vehicle" },
+  { path: "spaceport" },
+  { path: "space-capsule" },
+];

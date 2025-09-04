@@ -4,12 +4,15 @@ import Destination from "./pages/destination";
 import Crew from "./pages/crew";
 
 import { Europa, Mars, Moon, Titan } from "./components/features/destinations";
+import Technology from "./pages/technology";
+
 import {
   Commander,
   Engineer,
   Pilot,
   Specialist,
 } from "./components/features/crews";
+import { Capsule, Spaceport, Vehicle } from "./components/features/technology";
 
 export default function App() {
   return (
@@ -30,6 +33,13 @@ export default function App() {
           <Route path="mission-specialist" element={<Specialist />} />
           <Route path="pilot" element={<Pilot />} />
           <Route path="flight-engineer" element={<Engineer />} />
+        </Route>
+
+        <Route path="/technology" element={<Technology />}>
+          <Route index element={<Navigate to="launch-vehicle" replace />} />
+          <Route path="launch-vehicle" element={<Vehicle />} />
+          <Route path="space-capsule" element={<Capsule />} />
+          <Route path="spaceport" element={<Spaceport />} />
         </Route>
       </Routes>
     </BrowserRouter>

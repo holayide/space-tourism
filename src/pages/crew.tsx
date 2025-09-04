@@ -12,7 +12,7 @@ export default function Crew() {
       <Header />
 
       {/* hero-wrapper  */}
-      <div className="py-6 md:mt- md:pb-0 lg:py-12">
+      <div className="py-6 md:pb-0 lg:py-12">
         <div className="container hero-container flex flex-col gap-6 hero-wrapper">
           <h3 className="text-xl lg:text-[28px] text-center md:text-start tracking-widest text-white">
             <span className="mr-6 text-white/50 font-bold">02</span> MEET YOUR

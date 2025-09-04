@@ -27,7 +27,6 @@ export function SpaceDataProvider({ children }: SpaceDataProviderProps) {
 
       const result: SpaceData = await res.json();
 
-      console.log("result:", result);
       setSpaceData(result);
     } catch (err) {
       setError(

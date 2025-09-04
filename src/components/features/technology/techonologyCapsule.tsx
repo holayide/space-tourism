@@ -1,22 +1,13 @@
+import { useSpaceData } from "@/hooks/useSpaceData";
+import Space from "./space";
+
 export default function TechonologyCapsule() {
-  return <div>techonologyCapsule</div>;
+  const { getTechnology, loading, error } = useSpaceData();
+
+  if (loading) return <div className="loading">Loading technologies...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
+
+  const { name, description } = getTechnology("Space capsule")!;
+
+  return <Space name={name} description={description}></Space>;
 }
-
-//   00 Home
-//   01 Destination
-//   02 Crew
-//   03 Technology
-
-//   03 Space launch 101
-
-//   1
-//   2
-//   3
-
-//   The terminology...
-//   Space capsule
-
-//   A space capsule is an often-crewed spacecraft that uses a blunt-body reentry
-//   capsule to reenter the Earth's atmosphere without wings. Our capsule is where
-//   you'll spend your time during the flight. It includes a space gym, cinema,
-//   and plenty of other activities to keep you entertained.

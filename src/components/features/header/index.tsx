@@ -40,7 +40,11 @@ export default function Header() {
           <div className="flex mb-8 ml-8 mr-0.5">
             <button className="w-full" onClick={() => setIsOpen(false)}>
               <div className="flex justify-end px-6 py-8">
-                <img src={close} alt="close menu" className="size-6" />
+                <img
+                  src={close}
+                  alt="close menu"
+                  className="size-6 cursor-pointer"
+                />
               </div>
 
               <div className="mt-12">

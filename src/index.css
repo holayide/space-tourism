@@ -26,6 +26,10 @@
 .crew-list > .active > span {
   background-color: var(--color-white);
 }
+.technology-lists > .active {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
 
 @media (min-width: 768px) {
   .active {
@@ -53,6 +57,17 @@
   }
 }
 
+.container-right {
+  max-width: 1340px;
+  display: flex;
+}
+@media (min-width: 1024px) {
+  .container-right {
+    justify-self: end;
+    padding-left: 65px;
+  }
+}
+
 .hero-wrapper {
   min-height: calc(100dvh - 136px);
 }
@@ -67,25 +82,7 @@
   }
 }
 
-/* .hero-container {
-  height: calc(100dvh - 136px);
-}
-@media (min-width: 768px) {
-  .hero-wrapper {
-    height: calc(100vh - 176px);
-  }
-}
-@media (min-width: 1024px) {
-  .hero-wrapper {
-    height: calc(100vh - 232px);
-  }
-} */
-
 @layer base {
-  /* * {
-    @apply border-border;
-  }  */
-
   body {
     @apply font-condensed antialiased bg-primary text-foreground font-normal;
   }
